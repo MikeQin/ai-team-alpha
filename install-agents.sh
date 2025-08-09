@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # install-agents.sh - AI Agent Dev Team Installation Script
-# Installs all 9 AI agents to user's Claude Code profile
+# Installs 9 AI agents + framework documentation to user's Claude Code profile
 
 set -e  # Exit on any error
 
@@ -26,7 +26,7 @@ echo -e "${BLUE}╔════════════════════�
 echo -e "║                                                                     ║"
 echo -e "║   🤖 AI Team Alpha Installer v${VERSION}                       ║"
 echo -e "║                                                                     ║"
-echo -e "║   Installing 9 specialized agents for Claude Code                   ║"
+echo -e "║   Installing 9 specialized agents + framework docs for Claude Code  ║"
 echo -e "║                                                                     ║"
 echo -e "╚══════════════════════════════════════════════════════════════╝${NC}"
 echo
@@ -69,6 +69,7 @@ check_source_directory() {
         "security-architect-sarah.md"
         "senior-qa-vijay.md"
         "system-architect-mike.md"
+        "CLAUDE.md"
     )
     
     local missing_agents=()
@@ -86,7 +87,7 @@ check_source_directory() {
         exit 1
     fi
     
-    print_success "Found all 9 expected agent configuration files"
+    print_success "Found all 10 expected files (9 agents + framework documentation)"
 }
 
 # Function to create target directory
@@ -211,10 +212,10 @@ verify_installation() {
     
     local agent_count=$(find "$AGENTS_TARGET_DIR" -name "*.md" -type f | wc -l)
     
-    if [ "$agent_count" -eq 9 ]; then
-        print_success "Verification passed: All 9 agents installed correctly"
+    if [ "$agent_count" -eq 10 ]; then
+        print_success "Verification passed: All 10 files installed correctly (9 agents + framework documentation)"
     else
-        print_warning "Verification warning: Found $agent_count agents (expected 9)"
+        print_warning "Verification warning: Found $agent_count files (expected 10: 9 agents + CLAUDE.md)"
     fi
     
     echo
