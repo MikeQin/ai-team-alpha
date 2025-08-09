@@ -223,19 +223,35 @@ In Claude Code conversation:
 ```
 ai-team-alpha/
 ├── .claude/
-│   └── agents/
-│       ├── code-reviewer-marcus.md
-│       ├── data-scientist-elena.md
-│       ├── debugger-diego.md
-│       ├── fullstack-luke.md
-│       ├── infrastructure-alex.md
-│       ├── product-owner-will.md
-│       ├── security-architect-sarah.md
-│       ├── senior-qa-vijay.md
-│       └── system-architect-mike.md
-├── install-agents.sh
-├── README.md
-└── CLAUDE.md
+│   ├── agents/                          # Agent configuration files
+│   │   ├── code-reviewer-marcus.md      # Marcus - Code review specialist
+│   │   ├── data-scientist-elena.md      # Elena - Data analysis expert
+│   │   ├── debugger-diego.md            # Diego - Debugging specialist
+│   │   ├── fullstack-luke.md            # Luke - Fullstack developer
+│   │   ├── infrastructure-alex.md       # Alex - Infrastructure engineer
+│   │   ├── product-owner-will.md        # Will - Product owner
+│   │   ├── security-architect-sarah.md  # Sarah - Security architect
+│   │   ├── senior-qa-vijay.md           # Vijay - QA engineer
+│   │   └── system-architect-mike.md     # Mike - System architect
+│   └── settings.local.json              # Local Claude Code settings
+├── .github/                             # GitHub configuration
+│   ├── ISSUE_TEMPLATE/                  # Issue templates
+│   │   ├── agent_improvement.yml        # Agent improvement requests
+│   │   ├── bug_report.yml               # Bug reports
+│   │   └── feature_request.yml          # Feature requests
+│   ├── workflows/                       # GitHub Actions workflows
+│   │   ├── ci.yml                       # Continuous integration
+│   │   └── dependabot.yml               # Dependabot workflow
+│   ├── dependabot.yml                   # Dependabot configuration
+│   └── pull_request_template.md         # PR template
+├── .gitignore                           # Git ignore rules
+├── CLAUDE.md                            # Framework documentation for Claude Code
+├── CONTRIBUTING.md                      # Contribution guidelines
+├── LICENSE                              # MIT license
+├── MARKETING.md                         # Marketing article
+├── README.md                            # Project documentation
+├── SECURITY.md                          # Security policy
+└── install-agents.sh                    # Installation script
 ```
 
 ## 🎨 Agent Customization
