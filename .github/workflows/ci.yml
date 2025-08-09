@@ -1,0 +1,365 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  workflow_dispatch:
+
+jobs:
+  validate-agents:
+    name: Validate Agent Configuration
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Validate agent structure
+      run: |
+        echo "Validating agent configuration files..."
+        
+        # Check if all expected agent files exist
+        expected_agents=(
+          "code-reviewer-marcus.md"
+          "data-scientist-elena.md"
+          "debugger-diego.md"
+          "fullstack-luke.md"
+          "infrastructure-alex.md"
+          "product-owner-will.md"
+          "security-architect-sarah.md"
+          "senior-qa-vijay.md"
+          "system-architect-mike.md"
+        )
+        
+        missing_agents=()
+        for agent in "${expected_agents[@]}"; do
+          if [ ! -f ".claude/agents/$agent" ]; then
+            missing_agents+=("$agent")
+          fi
+        done
+        
+        if [ ${#missing_agents[@]} -gt 0 ]; then
+          echo "❌ Missing agent configuration files:"
+          for agent in "${missing_agents[@]}"; do
+            echo "  - $agent"
+          done
+          exit 1
+        fi
+        
+        echo "✅ All 9 expected agent configuration files found"
+        
+    - name: Validate markdown syntax
+      run: |
+        echo "Validating markdown syntax in agent files..."
+        
+        # Install markdown linter
+        npm install -g markdownlint-cli
+        
+        # Lint all markdown files
+        markdownlint .claude/agents/*.md README.md CONTRIBUTING.md || exit_code=$?
+        
+        if [ ${exit_code:-0} -ne 0 ]; then
+          echo "❌ Markdown syntax validation failed"
+          exit 1
+        fi
+        
+        echo "✅ Markdown syntax validation passed"
+        
+    - name: Check agent completeness
+      run: |
+        echo "Checking agent configuration completeness..."
+        
+        # Check each agent file has required sections
+        for agent_file in .claude/agents/*.md; do
+          agent_name=$(basename "$agent_file")
+          echo "Checking $agent_name..."
+          
+          # Check for required sections (basic validation)
+          if ! grep -q "# " "$agent_file"; then
+            echo "❌ $agent_name: Missing title/header"
+            exit 1
+          fi
+          
+          # Check file is not empty
+          if [ ! -s "$agent_file" ]; then
+            echo "❌ $agent_name: Empty file"
+            exit 1
+          fi
+          
+          echo "✅ $agent_name: Basic validation passed"
+        done
+        
+        echo "✅ All agent configuration files passed completeness check"
+
+  test-installation:
+    name: Test Installation Script
+    runs-on: ubuntu-latest
+    needs: validate-agents
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Make install script executable
+      run: chmod +x install-agents.sh
+      
+    - name: Test install script syntax
+      run: |
+        echo "Testing install script syntax..."
+        bash -n install-agents.sh
+        echo "✅ Install script syntax is valid"
+        
+    - name: Test dry run installation
+      run: |
+        echo "Testing installation script with dry run..."
+        
+        # Create a temporary home directory for testing
+        export TEST_HOME="/tmp/test-home"
+        mkdir -p "$TEST_HOME"
+        
+        # Mock the installation by copying to test directory instead
+        mkdir -p "$TEST_HOME/.claude/agents"
+        
+        # Test that all agent files can be copied
+        cp .claude/agents/*.md "$TEST_HOME/.claude/agents/"
+        
+        # Verify all files were copied
+        expected_count=9
+        actual_count=$(ls -1 "$TEST_HOME/.claude/agents"/*.md 2>/dev/null | wc -l)
+        
+        if [ "$actual_count" -ne "$expected_count" ]; then
+          echo "❌ Expected $expected_count agent files, found $actual_count"
+          exit 1
+        fi
+        
+        echo "✅ Installation test passed - all $actual_count agent files copied successfully"
+
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    needs: validate-agents
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Scan for sensitive content
+      run: |
+        echo "Scanning for sensitive content in agent files..."
+        
+        # Check for potential sensitive patterns
+        sensitive_patterns=(
+          "password"
+          "secret"
+          "token"
+          "api[_-]?key"
+          "private[_-]?key"
+          "auth[_-]?token"
+        )
+        
+        found_sensitive=false
+        
+        for pattern in "${sensitive_patterns[@]}"; do
+          if grep -ri "$pattern" .claude/agents/ README.md CONTRIBUTING.md; then
+            echo "⚠️  Found potential sensitive content: $pattern"
+            found_sensitive=true
+          fi
+        done
+        
+        if [ "$found_sensitive" = true ]; then
+          echo "❌ Potential sensitive content detected - please review"
+          exit 1
+        fi
+        
+        echo "✅ No sensitive content patterns detected"
+        
+    - name: Check file permissions
+      run: |
+        echo "Checking file permissions..."
+        
+        # Check that agent files are not executable
+        executable_agents=$(find .claude/agents -name "*.md" -executable)
+        if [ -n "$executable_agents" ]; then
+          echo "❌ Agent files should not be executable:"
+          echo "$executable_agents"
+          exit 1
+        fi
+        
+        # Check that install script is executable
+        if [ ! -x "install-agents.sh" ]; then
+          echo "❌ Install script should be executable"
+          exit 1
+        fi
+        
+        echo "✅ File permissions are correct"
+
+  documentation-check:
+    name: Documentation Check
+    runs-on: ubuntu-latest
+    needs: validate-agents
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Check documentation consistency
+      run: |
+        echo "Checking documentation consistency..."
+        
+        # Count agents in README vs actual files
+        readme_agent_count=$(grep -c "claude --agent" README.md || echo "0")
+        actual_agent_count=$(ls -1 .claude/agents/*.md | wc -l)
+        
+        echo "README mentions $readme_agent_count agent examples"
+        echo "Actual agent files: $actual_agent_count"
+        
+        # Check that README is up to date (should mention all agents)
+        agent_names=(
+          "product-owner-will"
+          "system-architect-mike"
+          "security-architect-sarah"
+          "fullstack-luke"
+          "infrastructure-alex"
+          "senior-qa-vijay"
+          "code-reviewer-marcus"
+          "debugger-diego"
+          "data-scientist-elena"
+        )
+        
+        missing_in_readme=()
+        for agent in "${agent_names[@]}"; do
+          if ! grep -q "$agent" README.md; then
+            missing_in_readme+=("$agent")
+          fi
+        done
+        
+        if [ ${#missing_in_readme[@]} -gt 0 ]; then
+          echo "❌ Agents missing from README.md:"
+          for agent in "${missing_in_readme[@]}"; do
+            echo "  - $agent"
+          done
+          exit 1
+        fi
+        
+        echo "✅ All agents are documented in README.md"
+        
+    - name: Check links and references
+      run: |
+        echo "Checking internal links and references..."
+        
+        # Check that referenced files exist
+        referenced_files=(
+          "LICENSE"
+          "CONTRIBUTING.md"
+          "install-agents.sh"
+        )
+        
+        for file in "${referenced_files[@]}"; do
+          if [ ! -f "$file" ]; then
+            echo "❌ Referenced file not found: $file"
+            exit 1
+          fi
+        done
+        
+        echo "✅ All referenced files exist"
+
+  integration-test:
+    name: Integration Test
+    runs-on: ubuntu-latest
+    needs: [validate-agents, test-installation, security-scan, documentation-check]
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Full integration test
+      run: |
+        echo "Running full integration test..."
+        
+        # Test complete installation process
+        chmod +x install-agents.sh
+        
+        # Create test environment
+        export HOME="/tmp/integration-test"
+        mkdir -p "$HOME"
+        
+        # Run installation with force flag
+        ./install-agents.sh --force
+        
+        # Verify installation
+        if [ ! -d "$HOME/.claude/agents" ]; then
+          echo "❌ Installation failed - agents directory not created"
+          exit 1
+        fi
+        
+        # Check all agents were installed
+        expected_count=9
+        installed_count=$(ls -1 "$HOME/.claude/agents"/*.md 2>/dev/null | wc -l)
+        
+        if [ "$installed_count" -ne "$expected_count" ]; then
+          echo "❌ Installation failed - expected $expected_count agents, found $installed_count"
+          exit 1
+        fi
+        
+        echo "✅ Integration test passed - installation completed successfully"
+        
+    - name: Validate final state
+      run: |
+        echo "Validating final installation state..."
+        
+        # List installed agents
+        echo "Installed agents:"
+        ls -la "/tmp/integration-test/.claude/agents/"
+        
+        # Check file sizes (should not be empty)
+        for agent_file in "/tmp/integration-test/.claude/agents"/*.md; do
+          if [ ! -s "$agent_file" ]; then
+            echo "❌ Empty agent file: $(basename "$agent_file")"
+            exit 1
+          fi
+        done
+        
+        echo "✅ All installed agents are non-empty"
+        echo "✅ CI/CD pipeline completed successfully"
+
+  release-check:
+    name: Release Readiness Check
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    needs: [integration-test]
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Check release readiness
+      run: |
+        echo "Checking release readiness..."
+        
+        # Check version consistency
+        if grep -q "version.*1\.0\.0" README.md && grep -q "VERSION=\"1\.0\.0\"" install-agents.sh; then
+          echo "✅ Version consistency check passed"
+        else
+          echo "⚠️  Version inconsistency detected between README.md and install-agents.sh"
+        fi
+        
+        # Check if all required files are present for release
+        required_files=(
+          "README.md"
+          "LICENSE"
+          "CONTRIBUTING.md"
+          "install-agents.sh"
+          ".gitignore"
+        )
+        
+        for file in "${required_files[@]}"; do
+          if [ ! -f "$file" ]; then
+            echo "❌ Required release file missing: $file"
+            exit 1
+          fi
+        done
+        
+        echo "✅ All required files present for release"
+        echo "✅ Repository is ready for release"

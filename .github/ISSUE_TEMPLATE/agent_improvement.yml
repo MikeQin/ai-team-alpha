@@ -1,0 +1,116 @@
+name: Agent Improvement
+description: Suggest improvements to existing agent behavior or capabilities
+title: "[AGENT] "
+labels: ["agent-improvement", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Suggest improvements to make our AI agents more effective and helpful!
+
+  - type: dropdown
+    id: agent
+    attributes:
+      label: Agent to Improve
+      description: Which agent needs improvement?
+      options:
+        - Will (Product Owner)
+        - Mike (System Architect)
+        - Sarah (Security Architect)
+        - Luke (Fullstack Developer)
+        - Vijay (QA Engineer)
+        - Alex (Infrastructure Engineer)
+        - Marcus (Code Reviewer)
+        - Diego (Debugger)
+        - Elena (Data Scientist)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: improvement-type
+    attributes:
+      label: Type of Improvement
+      description: What type of improvement is this?
+      options:
+        - Response Quality - Better/more accurate responses
+        - New Capability - Add new skills or knowledge
+        - Better Instructions - Clearer behavioral guidelines  
+        - Tool Usage - Better use of available tools
+        - Communication Style - Improve how agent communicates
+        - Workflow Integration - Better integration with other agents
+        - Performance - Faster or more efficient responses
+        - Specialization - More focused expertise
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-behavior
+    attributes:
+      label: Current Behavior
+      description: Describe how the agent currently behaves in the relevant scenarios
+      placeholder: Currently, when I ask the agent to..., it responds by...
+    validations:
+      required: true
+
+  - type: textarea
+    id: desired-behavior
+    attributes:
+      label: Desired Behavior
+      description: Describe how you'd like the agent to behave instead
+      placeholder: I would prefer if the agent...
+    validations:
+      required: true
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples
+      description: Provide specific examples of requests and how responses should improve
+      placeholder: |
+        Example request: claude --agent agent-name "..."
+        
+        Current response: (describe current output)
+        Improved response: (describe desired output)
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-cases
+    attributes:
+      label: Use Cases
+      description: When would this improvement be most valuable?
+      placeholder: This would be especially helpful when...
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: How Often Do You Encounter This?
+      options:
+        - Rarely - Once in a while
+        - Occasionally - A few times a month  
+        - Frequently - Several times a week
+        - Daily - Almost every time I use this agent
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Expected Impact
+      description: How would this improvement affect your workflow?
+      placeholder: This improvement would help me by...
+
+  - type: checkboxes
+    id: testing
+    attributes:
+      label: Testing Assistance
+      options:
+        - label: I can help test the improved agent behavior
+        - label: I can provide additional examples and scenarios
+        - label: I can help validate the improvement works as expected
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Any other details that would help improve this agent

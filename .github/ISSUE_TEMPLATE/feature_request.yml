@@ -1,0 +1,108 @@
+name: Feature Request
+description: Suggest a new feature or enhancement for AI Team Alpha
+title: "[FEATURE] "
+labels: ["enhancement", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting a feature! Please provide detailed information about your request.
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Feature Category
+      description: What type of feature is this?
+      options:
+        - New Agent
+        - Agent Enhancement
+        - Installation/Setup
+        - Documentation
+        - Workflow Integration
+        - Performance Improvement
+        - Security Enhancement
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: agent
+    attributes:
+      label: Related Agent (if applicable)
+      description: Which agent would this feature affect?
+      options:
+        - Will (Product Owner)
+        - Mike (System Architect)
+        - Sarah (Security Architect)
+        - Luke (Fullstack Developer)
+        - Vijay (QA Engineer)
+        - Alex (Infrastructure Engineer)
+        - Marcus (Code Reviewer)
+        - Diego (Debugger)
+        - Elena (Data Scientist)
+        - All Agents
+        - New Agent
+        - Not Applicable
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem/Need
+      description: What problem would this feature solve? What need does it address?
+      placeholder: Describe the problem or need this feature would address...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe your proposed solution or feature
+      placeholder: Describe what you'd like to see implemented...
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-cases
+    attributes:
+      label: Use Cases
+      description: Provide specific examples of how this feature would be used
+      placeholder: |
+        Example 1: claude --agent new-feature "..."
+        Example 2: When working on X, this would help by...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Have you considered any alternative solutions or workarounds?
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority Level
+      description: How important is this feature to you?
+      options:
+        - Low - Nice to have
+        - Medium - Would significantly improve workflow
+        - High - Essential for my use case
+        - Critical - Blocking current workflow
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: implementation
+    attributes:
+      label: Implementation Willingness
+      options:
+        - label: I would be willing to contribute to implementing this feature
+        - label: I can help with testing this feature
+        - label: I can help with documentation for this feature
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Any other context, mockups, or examples that would help
