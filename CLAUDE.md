@@ -174,8 +174,8 @@ Agents are installed to `~/.claude/agents/` and become available immediately in 
 # Verify installation
 ls ~/.claude/agents/
 
-# Start using
-claude --agent product-owner-will "Define requirements for my app"
+# Start using (in Claude Code conversation)
+"Use the Will subagent to define requirements for my app"
 ```
 
 ## Troubleshooting

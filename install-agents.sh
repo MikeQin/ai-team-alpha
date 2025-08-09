@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# install-agents.sh - AI Agent Dev Team Installation Script
+# install-agents.sh - AI Team Alpha Installation Script
 # Installs 9 AI agents + framework documentation to user's Claude Code profile
 
 set -e  # Exit on any error
@@ -22,12 +22,12 @@ AGENTS_TARGET_DIR="$HOME/.claude/agents"
 FORCE_INSTALL=false
 
 # Banner
-echo -e "${BLUE}╔══════════════════════════════════════════════════════════════╗"
-echo -e "║                                                                     ║"
-echo -e "║   🤖 AI Team Alpha Installer v${VERSION}                       ║"
-echo -e "║                                                                     ║"
-echo -e "║   Installing 9 specialized agents + framework docs for Claude Code  ║"
-echo -e "║                                                                     ║"
+echo -e "${GREEN}╔══════════════════════════════════════════════════════════════╗"
+echo -e "║                                                              ║"
+echo -e "║   🤖 AI Team Alpha Installer v1.0.0 🤖                       ║"
+echo -e "║                                                              ║"
+echo -e "║   Installing 9 agents + framework docs for Claude Code       ║"
+echo -e "║                                                              ║"
 echo -e "╚══════════════════════════════════════════════════════════════╝${NC}"
 echo
 
@@ -69,7 +69,6 @@ check_source_directory() {
         "security-architect-sarah.md"
         "senior-qa-vijay.md"
         "system-architect-mike.md"
-        "CLAUDE.md"
     )
     
     local missing_agents=()
@@ -78,6 +77,11 @@ check_source_directory() {
             missing_agents+=("$agent")
         fi
     done
+    
+    # Check for CLAUDE.md in project root
+    if [ ! -f "CLAUDE.md" ]; then
+        missing_agents+=("CLAUDE.md (in project root)")
+    fi
     
     if [ ${#missing_agents[@]} -gt 0 ]; then
         print_error "Missing agent configuration files:"
@@ -179,11 +183,12 @@ backup_existing_agents() {
 
 # Function to install agents
 install_agents() {
-    print_status "Installing AI Agent Dev Team..."
+    print_status "Installing AI Team Alpha..."
     
     local installed_count=0
     local skipped_count=0
     
+    # Copy agent files from .claude/agents/
     for agent_file in "$AGENTS_SOURCE_DIR"/*.md; do
         if [ -f "$agent_file" ]; then
             local agent_name=$(basename "$agent_file")
@@ -200,6 +205,17 @@ install_agents() {
             fi
         fi
     done
+    
+    # Copy CLAUDE.md from project root
+    if [ -f "CLAUDE.md" ]; then
+        cp "CLAUDE.md" "$AGENTS_TARGET_DIR/CLAUDE.md"
+        if [ $? -eq 0 ]; then
+            print_success "Installed: CLAUDE.md (framework documentation)"
+            installed_count=$((installed_count + 1))
+        else
+            print_error "Failed to install: CLAUDE.md"
+        fi
+    fi
     
     echo
     print_success "Installation completed!"
@@ -234,7 +250,7 @@ show_usage_instructions() {
     echo -e "║                                                              ║"
     echo -e "╚══════════════════════════════════════════════════════════════╝${NC}"
     echo
-    print_success "The AI Agent Dev Team is now installed and ready to use!"
+    print_success "The AI Team Alpha is now installed and ready to use!"
     echo
     print_status "Available agents:"
     echo "  • Will (PO) - Product Owner for requirements gathering"
@@ -247,18 +263,18 @@ show_usage_instructions() {
     echo "  • Diego (Debugger) - Error resolution and troubleshooting"
     echo "  • Elena (Data Scientist) - Data analysis and SQL queries"
     echo
-    print_status "Usage examples (enter in Claude Code conversation window):"
-    echo "  claude --design --agent product-owner-will \"Create a task management app\""
-    echo "  claude --design --agent system-architect-mike \"Design scalable architecture\""
-    echo "  claude --develop --agent fullstack-luke \"Implement dashboard\""
-    echo "  claude --agent code-reviewer-marcus \"Review recent changes\""
+    print_status "Usage examples (enter in Claude Code conversation):"
+    echo "  \"Use the Will subagent to create a task management app\""
+    echo "  \"Use the Mike subagent to design scalable architecture\""
+    echo "  \"Use the Luke subagent to implement dashboard\""
+    echo "  \"Use the Marcus subagent to review recent changes\""
     echo
     print_status "For complete documentation, see:"
     echo "  • README.md - Project overview and quick start"
     echo "  • TUTORIAL.md - Comprehensive tutorial with examples"
     echo "  • CLAUDE.md - Complete agent configuration details"
     echo
-    print_success "Happy coding with your AI Agent Dev Team! 🚀"
+    print_success "Happy coding with your AI Team Alpha! 🚀"
 }
 
 # Main installation process
@@ -292,7 +308,7 @@ main() {
 show_help() {
     echo "Usage: $0 [OPTIONS]"
     echo
-    echo "Install AI Agent Dev Team to Claude Code profile (~/.claude/agents/)"
+    echo "Install AI Team Alpha to Claude Code profile (~/.claude/agents/)"
     echo
     echo "Options:"
     echo "  -f, --force     Force installation without confirmation prompts"

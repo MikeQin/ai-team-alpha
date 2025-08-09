@@ -21,8 +21,9 @@
    ```
 
 3. **Start using in Claude Code:**
-   ```bash
-   claude --agent product-owner-will "Create requirements for a todo app"
+   ```
+   In Claude Code conversation:
+   "Use the Will subagent to create requirements for a todo app"
    ```
 
 ## 👥 Meet Your AI Team
@@ -43,177 +44,178 @@
 
 ### Basic Usage Pattern
 
-```bash
-claude --agent <agent-name> "<your request>"
+```
+In Claude Code conversation:
+"Use the <Agent Name> subagent to <your request>"
 ```
 
 ### 🎯 Planning & Requirements
 
 **Product Owner (Will)**
-```bash
+```
 # Define project requirements
-claude --agent product-owner-will "Create comprehensive requirements for an e-commerce platform"
+"Use the Will subagent to create comprehensive requirements for an e-commerce platform"
 
 # Generate user stories
-claude --agent product-owner-will "Write user stories for user authentication and profile management"
+"Use the Will subagent to write user stories for user authentication and profile management"
 
 # Feature prioritization
-claude --agent product-owner-will "Help prioritize these features: payments, inventory, reviews, recommendations"
+"Use the Will subagent to help prioritize these features: payments, inventory, reviews, recommendations"
 ```
 
 **System Architect (Mike)**
-```bash
+```
 # Design system architecture
-claude --agent system-architect-mike "Design a microservices architecture for handling 100k concurrent users"
+"Use the Mike subagent to design a microservices architecture for handling 100k concurrent users"
 
 # Technology recommendations
-claude --agent system-architect-mike "Recommend tech stack for a real-time chat application with file sharing"
+"Use the Mike subagent to recommend tech stack for a real-time chat application with file sharing"
 
 # Database design
-claude --agent system-architect-mike "Design database schema for a social media platform"
+"Use the Mike subagent to design database schema for a social media platform"
 ```
 
 ### 🔒 Security & Compliance
 
 **Security Architect (Sarah)**
-```bash
+```
 # Security architecture review
-claude --agent security-architect-sarah "Review the security architecture for our payment processing system"
+"Use the Sarah subagent to review the security architecture for our payment processing system"
 
 # Threat modeling
-claude --agent security-architect-sarah "Perform threat modeling for user authentication flow"
+"Use the Sarah subagent to perform threat modeling for user authentication flow"
 
 # Compliance guidance
-claude --agent security-architect-sarah "Ensure GDPR compliance for user data collection"
+"Use the Sarah subagent to ensure GDPR compliance for user data collection"
 ```
 
 ### 💻 Development
 
 **Fullstack Developer (Luke)**
-```bash
+```
 # Complete application development
-claude --agent fullstack-luke "Create a task management app with React frontend and FastAPI backend"
+"Use the Luke subagent to create a task management app with React frontend and FastAPI backend"
 
 # Cross-platform development
-claude --agent fullstack-luke "Build a mobile app with Flutter and web dashboard with Next.js"
+"Use the Luke subagent to build a mobile app with Flutter and web dashboard with Next.js"
 
 # API development
-claude --agent fullstack-luke "Create RESTful API with authentication and real-time notifications"
+"Use the Luke subagent to create RESTful API with authentication and real-time notifications"
 ```
 
 ### 🏗️ Infrastructure & Operations
 
 **Infrastructure Engineer (Alex)**
-```bash
+```
 # CI/CD pipeline setup
-claude --agent infrastructure-alex "Set up GitHub Actions for automated testing and deployment"
+"Use the Alex subagent to set up GitHub Actions for automated testing and deployment"
 
 # Container orchestration
-claude --agent infrastructure-alex "Create Docker and Kubernetes configs for microservices deployment"
+"Use the Alex subagent to create Docker and Kubernetes configs for microservices deployment"
 
 # Performance optimization
-claude --agent infrastructure-alex "Optimize database performance for high-traffic application"
+"Use the Alex subagent to optimize database performance for high-traffic application"
 ```
 
 ### 🧪 Quality Assurance
 
 **QA Engineer (Vijay)**
-```bash
+```
 # Test strategy development
-claude --agent senior-qa-vijay "Create comprehensive testing strategy for our new API"
+"Use the Vijay subagent to create comprehensive testing strategy for our new API"
 
 # Test case generation
-claude --agent senior-qa-vijay "Generate test cases for user authentication flow"
+"Use the Vijay subagent to generate test cases for user authentication flow"
 
 # Performance testing
-claude --agent senior-qa-vijay "Design performance testing plan for handling 10k concurrent users"
+"Use the Vijay subagent to design performance testing plan for handling 10k concurrent users"
 ```
 
 ### 🔍 Code Quality & Debugging
 
 **Code Reviewer (Marcus)**
-```bash
+```
 # Code review
-claude --agent code-reviewer-marcus "Review the recent changes in my authentication module"
+"Use the Marcus subagent to review the recent changes in my authentication module"
 
 # Security audit
-claude --agent code-reviewer-marcus "Audit this payment processing code for security vulnerabilities"
+"Use the Marcus subagent to audit this payment processing code for security vulnerabilities"
 
 # Best practices review
-claude --agent code-reviewer-marcus "Review this React component for performance and maintainability"
+"Use the Marcus subagent to review this React component for performance and maintainability"
 ```
 
 **Debugger (Diego)**
-```bash
+```
 # Error investigation
-claude --agent debugger-diego "Help debug this 500 error in my API endpoint"
+"Use the Diego subagent to help debug this 500 error in my API endpoint"
 
 # Performance issues
-claude --agent debugger-diego "Investigate why my React app is rendering slowly"
+"Use the Diego subagent to investigate why my React app is rendering slowly"
 
 # Test failures
-claude --agent debugger-diego "Debug these failing unit tests in my authentication service"
+"Use the Diego subagent to debug these failing unit tests in my authentication service"
 ```
 
 **Data Scientist (Elena)**
-```bash
+```
 # SQL query optimization
-claude --agent data-scientist-elena "Optimize this complex query for better performance"
+"Use the Elena subagent to optimize this complex query for better performance"
 
 # Data analysis
-claude --agent data-scientist-elena "Analyze user engagement metrics from our PostgreSQL database"
+"Use the Elena subagent to analyze user engagement metrics from our PostgreSQL database"
 
 # BigQuery operations
-claude --agent data-scientist-elena "Create BigQuery queries to analyze user behavior patterns"
+"Use the Elena subagent to create BigQuery queries to analyze user behavior patterns"
 ```
 
 ## 🔄 Workflow Examples
 
 ### Complete Project Workflow
 
-```bash
+```
 # 1. Define requirements
-claude --agent product-owner-will "Create requirements for a blog platform"
+"Use the Will subagent to create requirements for a blog platform"
 
 # 2. Design architecture
-claude --agent system-architect-mike "Design scalable architecture for the blog platform"
+"Use the Mike subagent to design scalable architecture for the blog platform"
 
 # 3. Security review
-claude --agent security-architect-sarah "Review security requirements for blog platform"
+"Use the Sarah subagent to review security requirements for blog platform"
 
 # 4. Implement application
-claude --agent fullstack-luke "Implement the blog platform with Next.js and PostgreSQL"
+"Use the Luke subagent to implement the blog platform with Next.js and PostgreSQL"
 
 # 5. Set up infrastructure
-claude --agent infrastructure-alex "Set up CI/CD and deployment for the blog platform"
+"Use the Alex subagent to set up CI/CD and deployment for the blog platform"
 
 # 6. Create tests
-claude --agent senior-qa-vijay "Create comprehensive test suite for blog platform"
+"Use the Vijay subagent to create comprehensive test suite for blog platform"
 
 # 7. Code review
-claude --agent code-reviewer-marcus "Review all code for quality and security"
+"Use the Marcus subagent to review all code for quality and security"
 
 # 8. Debug issues
-claude --agent debugger-diego "Debug any issues found during testing"
+"Use the Diego subagent to debug any issues found during testing"
 ```
 
 ### Feature Development Workflow
 
-```bash
+```
 # 1. Define feature
-claude --agent product-owner-will "Define user authentication feature requirements"
+"Use the Will subagent to define user authentication feature requirements"
 
 # 2. Implement feature
-claude --agent fullstack-luke "Implement JWT-based authentication with password reset"
+"Use the Luke subagent to implement JWT-based authentication with password reset"
 
 # 3. Review code
-claude --agent code-reviewer-marcus "Review authentication implementation"
+"Use the Marcus subagent to review authentication implementation"
 
 # 4. Create tests
-claude --agent senior-qa-vijay "Create tests for authentication feature"
+"Use the Vijay subagent to create tests for authentication feature"
 
 # 5. Debug issues
-claude --agent debugger-diego "Fix any issues found in authentication tests"
+"Use the Diego subagent to fix any issues found in authentication tests"
 ```
 
 ## 📁 Project Structure
