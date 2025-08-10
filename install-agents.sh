@@ -26,7 +26,7 @@ echo -e "${GREEN}╔════════════════════
 echo -e "║                                                              ║"
 echo -e "║   🤖 AI Team Alpha Installer v2.0.0 🤖                       ║"
 echo -e "║                                                              ║"
-echo -e "║   Installing 9 agents + framework docs + protocols          ║"
+echo -e "║   Installing 9 agents + framework docs + protocols           ║"
 echo -e "║                                                              ║"
 echo -e "╚══════════════════════════════════════════════════════════════╝${NC}"
 echo
