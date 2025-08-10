@@ -1,11 +1,29 @@
-# AI Team Alpha 🤖
+# AI Team Alpha 🤖⚡
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Version](https://img.shields.io/badge/version-1.0.0-green.svg)
+![Version](https://img.shields.io/badge/version-2.0.0-green.svg)
 ![Claude Code](https://img.shields.io/badge/Claude%20Code-Compatible-purple.svg)
 ![Agents](https://img.shields.io/badge/agents-9-orange.svg)
+![Enterprise](https://img.shields.io/badge/enterprise-ready-gold.svg)
 
-> A collection of 9 specialized AI subagents for Claude Code that supercharge your development workflow with role-based expertise.
+> **Advanced specialized AI subagents for Claude Code** with enterprise-grade capabilities including automated documentation, comprehensive monitoring, advanced Git workflows, modern tooling support, and inter-agent communication protocols.
+
+## ✨ What's New in v2.0
+
+### 🚀 Enterprise-Grade Enhancements
+- **🔄 Advanced Git Workflow Integration** - GitOps, automated reviews, branch optimization
+- **📊 Comprehensive Performance Monitoring** - Full-stack observability, APM integration, real-time analytics
+- **📚 Automated Documentation Generation** - Self-maintaining docs, API documentation, architecture diagrams
+- **🛠️ Modern Tooling Support** - Latest frameworks, cloud platforms, security scanners, testing tools
+- **🔗 Inter-Agent Communication Protocol** - Standardized handoffs, quality gates, workflow optimization
+
+### 🎯 Agent Capabilities Upgrade
+All agents now include advanced capabilities:
+- **Modern Framework Support** - Current tools and technologies
+- **Automation Integration** - CI/CD, documentation, monitoring
+- **Enterprise Security** - Advanced scanning, compliance, automation
+- **Performance Analytics** - Comprehensive monitoring and optimization
+- **Quality Engineering** - Advanced testing, review automation
 
 ## 🚀 Quick Start
 
@@ -26,275 +44,541 @@
    "Use the Will subagent to create requirements for a todo app"
    ```
 
-## 👥 Meet Your AI Team
+## 👥 Meet Your Enhanced AI Team
 
-| Agent | Role | Specialty | Color |
-|-------|------|-----------|-------|
-| **Will** | Product Owner | Requirements gathering, user stories | - |
-| **Mike** | System Architect | Technical design, scalability | - |
-| **Sarah** | Security Architect | Security compliance, threat modeling | - |
-| **Luke** | Fullstack Developer | Web, mobile, backend development | - |
-| **Vijay** | QA Engineer | Testing strategies, quality assurance | - |
-| **Alex** | Infrastructure Engineer | DevOps, deployment, CI/CD | - |
-| **Marcus** | Code Reviewer | Code quality, security review | 🟠 |
-| **Diego** | Debugger | Error resolution, troubleshooting | 🔴 |
-| **Elena** | Data Scientist | SQL queries, data analysis | 🔵 |
+| Agent | Role | Enhanced Capabilities | Color |
+|-------|------|----------------------|-------|
+| **Will** 🎯 | Product Owner | Requirements, user stories, stakeholder management | 🔴 |
+| **Mike** 🏗️ | System Architect | Technical design, scalability, technology recommendations | 💜 |
+| **Sarah** 🔒 | Security Architect | Security scanning, compliance automation, threat modeling | 💛 |
+| **Luke** 💻 | Fullstack Developer | Multi-platform dev, automated documentation, modern frameworks | 🔵 |
+| **Alex** ☁️ | Infrastructure Engineer | Multi-cloud, advanced monitoring, GitOps, performance analytics | 💜 |
+| **Vijay** 🧪 | QA Engineer | Modern testing frameworks, automation, performance testing | 🟢 |
+| **Marcus** 👁️ | Code Reviewer | Git integration, automated reporting, documentation validation | 🟠 |
+| **Diego** 🔍 | Debugger | Advanced debugging, monitoring correlation, prevention automation | 🔴 |
+| **Elena** 📊 | Data Scientist | Performance analytics, business intelligence, predictive modeling | 🔵 |
 
-## 📋 How to Use Subagents
+## 🚀 Advanced Features
 
-### Basic Usage Pattern
+### 🔄 Git Workflow Integration
 
-```
-In Claude Code conversation:
-"Use the <Agent Name> subagent to <your request>"
-```
+**Enhanced Git Operations:**
+- **Marcus**: Advanced change analysis, cross-branch reviews, commit quality validation
+- **Alex**: GitOps implementation, infrastructure as code workflows, automated deployment
+- **Luke**: Documentation automation from Git changes, API documentation generation
 
-### 🎯 Planning & Requirements
+```bash
+# Example: Advanced Git workflow analysis
+"Use Marcus to analyze the impact of merging feature-branch into main"
 
-**Product Owner (Will)**
-```
-# Define project requirements
-"Use the Will subagent to create comprehensive requirements for an e-commerce platform"
-
-# Generate user stories
-"Use the Will subagent to write user stories for user authentication and profile management"
-
-# Feature prioritization
-"Use the Will subagent to help prioritize these features: payments, inventory, reviews, recommendations"
+# Example: GitOps infrastructure deployment
+"Use Alex to set up GitOps workflow for Kubernetes deployments"
 ```
 
-**System Architect (Mike)**
-```
-# Design system architecture
-"Use the Mike subagent to design a microservices architecture for handling 100k concurrent users"
+### 📊 Performance Monitoring & Observability
 
-# Technology recommendations
-"Use the Mike subagent to recommend tech stack for a real-time chat application with file sharing"
+**Comprehensive Monitoring Stack:**
+- **Alex**: Prometheus, Grafana, ELK stack, APM solutions, distributed tracing
+- **Elena**: Performance data analysis, business impact correlation, predictive analytics
+- **Diego**: Monitoring-integrated debugging, proactive issue detection
 
-# Database design
-"Use the Mike subagent to design database schema for a social media platform"
-```
+```bash
+# Example: Set up comprehensive monitoring
+"Use Alex to implement full-stack monitoring with Prometheus and Grafana"
 
-### 🔒 Security & Compliance
-
-**Security Architect (Sarah)**
-```
-# Security architecture review
-"Use the Sarah subagent to review the security architecture for our payment processing system"
-
-# Threat modeling
-"Use the Sarah subagent to perform threat modeling for user authentication flow"
-
-# Compliance guidance
-"Use the Sarah subagent to ensure GDPR compliance for user data collection"
+# Example: Performance data analysis
+"Use Elena to analyze application performance impact on conversion rates"
 ```
 
-### 💻 Development
+### 📚 Automated Documentation
 
-**Fullstack Developer (Luke)**
-```
-# Complete application development
-"Use the Luke subagent to create a task management app with React frontend and FastAPI backend"
+**Self-Maintaining Documentation:**
+- **Luke**: API documentation, component docs, architecture diagrams
+- **Marcus**: Review process documentation, knowledge base generation
+- **Alex**: Infrastructure documentation, runbook automation
 
-# Cross-platform development
-"Use the Luke subagent to build a mobile app with Flutter and web dashboard with Next.js"
+```bash
+# Example: Automated API documentation
+"Use Luke to set up automated OpenAPI documentation with Swagger UI"
 
-# API development
-"Use the Luke subagent to create RESTful API with authentication and real-time notifications"
-```
-
-### 🏗️ Infrastructure & Operations
-
-**Infrastructure Engineer (Alex)**
-```
-# CI/CD pipeline setup
-"Use the Alex subagent to set up GitHub Actions for automated testing and deployment"
-
-# Container orchestration
-"Use the Alex subagent to create Docker and Kubernetes configs for microservices deployment"
-
-# Performance optimization
-"Use the Alex subagent to optimize database performance for high-traffic application"
+# Example: Infrastructure documentation
+"Use Alex to generate infrastructure documentation from Terraform code"
 ```
 
-### 🧪 Quality Assurance
+### 🛠️ Modern Tooling Support
 
-**QA Engineer (Vijay)**
-```
-# Test strategy development
-"Use the Vijay subagent to create comprehensive testing strategy for our new API"
+**Latest Framework Integration:**
+- **Frontend**: Next.js, React, Angular, Vue.js with modern testing
+- **Mobile**: Flutter, React Native with comprehensive testing frameworks
+- **Backend**: FastAPI, Node.js with automated documentation
+- **Testing**: Jest, Playwright, Cypress, K6, JMeter
+- **Cloud**: AWS, GCP, Azure with native CLI tools
+- **Security**: SAST, DAST, dependency scanning, container security
 
-# Test case generation
-"Use the Vijay subagent to generate test cases for user authentication flow"
+## 📋 Enhanced Usage Examples
 
-# Performance testing
-"Use the Vijay subagent to design performance testing plan for handling 10k concurrent users"
-```
+### 🎯 Planning & Architecture (Advanced)
 
-### 🔍 Code Quality & Debugging
+**Product Owner (Will) - Enhanced Requirements**
+```bash
+# Advanced stakeholder analysis
+"Use Will to perform comprehensive stakeholder analysis and create conflict resolution strategies"
 
-**Code Reviewer (Marcus)**
-```
-# Code review
-"Use the Marcus subagent to review the recent changes in my authentication module"
+# Feature prioritization with business impact
+"Use Will to prioritize these 15 feature requests using RICE framework and business value analysis"
 
-# Security audit
-"Use the Marcus subagent to audit this payment processing code for security vulnerabilities"
-
-# Best practices review
-"Use the Marcus subagent to review this React component for performance and maintainability"
+# User story mapping with acceptance criteria
+"Use Will to create user story map with detailed acceptance criteria and testing scenarios"
 ```
 
-**Debugger (Diego)**
-```
-# Error investigation
-"Use the Diego subagent to help debug this 500 error in my API endpoint"
+**System Architect (Mike) - Advanced Architecture**
+```bash
+# Microservices architecture with service mesh
+"Use Mike to design microservices architecture with Istio service mesh for 100k concurrent users"
 
-# Performance issues
-"Use the Diego subagent to investigate why my React app is rendering slowly"
+# Multi-cloud strategy with disaster recovery
+"Use Mike to design multi-cloud architecture with automated failover and disaster recovery"
 
-# Test failures
-"Use the Diego subagent to debug these failing unit tests in my authentication service"
-```
-
-**Data Scientist (Elena)**
-```
-# SQL query optimization
-"Use the Elena subagent to optimize this complex query for better performance"
-
-# Data analysis
-"Use the Elena subagent to analyze user engagement metrics from our PostgreSQL database"
-
-# BigQuery operations
-"Use the Elena subagent to create BigQuery queries to analyze user behavior patterns"
+# API design with GraphQL federation
+"Use Mike to design GraphQL federation architecture for distributed teams"
 ```
 
-## 🔄 Workflow Examples
+### 🔒 Security & Compliance (Advanced)
 
-### Complete Project Workflow
+**Security Architect (Sarah) - Comprehensive Security**
+```bash
+# Automated security pipeline
+"Use Sarah to design comprehensive security pipeline with SAST, DAST, and dependency scanning"
 
-```
-# 1. Define requirements
-"Use the Will subagent to create requirements for a blog platform"
+# GDPR compliance automation
+"Use Sarah to implement automated GDPR compliance monitoring and reporting"
 
-# 2. Design architecture
-"Use the Mike subagent to design scalable architecture for the blog platform"
+# Container security with policy enforcement
+"Use Sarah to set up container security scanning with policy enforcement in Kubernetes"
 
-# 3. Security review
-"Use the Sarah subagent to review security requirements for blog platform"
-
-# 4. Implement application
-"Use the Luke subagent to implement the blog platform with Next.js and PostgreSQL"
-
-# 5. Set up infrastructure
-"Use the Alex subagent to set up CI/CD and deployment for the blog platform"
-
-# 6. Create tests
-"Use the Vijay subagent to create comprehensive test suite for blog platform"
-
-# 7. Code review
-"Use the Marcus subagent to review all code for quality and security"
-
-# 8. Debug issues
-"Use the Diego subagent to debug any issues found during testing"
+# Zero-trust architecture
+"Use Sarah to design zero-trust security architecture for microservices"
 ```
 
-### Feature Development Workflow
+### 💻 Development (Advanced)
 
-```
-# 1. Define feature
-"Use the Will subagent to define user authentication feature requirements"
+**Fullstack Developer (Luke) - Modern Development**
+```bash
+# Full-stack app with automated documentation
+"Use Luke to create Next.js app with FastAPI backend including automated API documentation and component stories"
 
-# 2. Implement feature
-"Use the Luke subagent to implement JWT-based authentication with password reset"
+# Cross-platform development with testing
+"Use Luke to build Flutter mobile app and React web app with shared API and comprehensive testing"
 
-# 3. Review code
-"Use the Marcus subagent to review authentication implementation"
+# Microservices with observability
+"Use Luke to implement microservices with OpenTelemetry tracing and metrics collection"
 
-# 4. Create tests
-"Use the Vijay subagent to create tests for authentication feature"
-
-# 5. Debug issues
-"Use the Diego subagent to fix any issues found in authentication tests"
+# Progressive Web App with offline support
+"Use Luke to create PWA with offline-first architecture and service worker optimization"
 ```
 
-## 📁 Project Structure
+### ☁️ Infrastructure (Advanced)
+
+**Infrastructure Engineer (Alex) - Enterprise Infrastructure**
+```bash
+# Multi-cloud Kubernetes with GitOps
+"Use Alex to set up multi-cloud Kubernetes with ArgoCD GitOps and comprehensive monitoring"
+
+# Infrastructure as Code with compliance
+"Use Alex to create Terraform modules with compliance scanning and automated documentation"
+
+# Advanced monitoring with SLI/SLO
+"Use Alex to implement SLI/SLO monitoring with error budget alerts and incident response automation"
+
+# Serverless architecture with observability
+"Use Alex to design serverless architecture with comprehensive monitoring and cost optimization"
+```
+
+### 🧪 Quality Assurance (Advanced)
+
+**QA Engineer (Vijay) - Modern Testing**
+```bash
+# Comprehensive testing strategy
+"Use Vijay to create testing strategy including unit, integration, E2E, performance, and security testing"
+
+# Test automation with CI/CD integration
+"Use Vijay to set up test automation pipeline with Playwright, Jest, and K6 performance testing"
+
+# Cross-browser testing with visual regression
+"Use Vijay to implement cross-browser testing with visual regression testing and accessibility audits"
+
+# Contract testing for microservices
+"Use Vijay to implement consumer-driven contract testing with Pact for microservices"
+```
+
+### 🔍 Code Quality & Debugging (Advanced)
+
+**Code Reviewer (Marcus) - Advanced Reviews**
+```bash
+# Git-enhanced code review with metrics
+"Use Marcus to perform comprehensive code review with technical debt analysis and quality metrics"
+
+# Automated review reporting
+"Use Marcus to set up automated code review reporting with team performance insights"
+
+# Security-focused review with automation
+"Use Marcus to review code with automated security scanning integration and compliance checking"
+
+# Documentation validation review
+"Use Marcus to review code changes ensuring documentation updates and API documentation accuracy"
+```
+
+**Debugger (Diego) - Advanced Debugging**
+```bash
+# Distributed tracing debugging
+"Use Diego to debug performance issue using distributed tracing data from Jaeger"
+
+# Monitoring-integrated debugging
+"Use Diego to investigate error patterns using APM data and log correlation"
+
+# Proactive issue detection
+"Use Diego to analyze monitoring data and implement proactive issue detection and prevention"
+
+# Root cause analysis with business impact
+"Use Diego to perform root cause analysis including business impact assessment and prevention strategies"
+```
+
+**Data Scientist (Elena) - Advanced Analytics**
+```bash
+# Performance impact analysis
+"Use Elena to analyze correlation between application performance metrics and business KPIs"
+
+# Predictive analytics for capacity planning
+"Use Elena to build predictive models for infrastructure capacity planning using historical data"
+
+# Real-time analytics dashboard
+"Use Elena to create real-time analytics dashboard combining application, infrastructure, and business metrics"
+
+# A/B testing with statistical analysis
+"Use Elena to design and analyze A/B tests with proper statistical significance testing"
+```
+
+## 🔄 Advanced Workflow Examples
+
+### 🚀 Complete Enterprise Project Workflow
+
+```bash
+# 1. Comprehensive requirements with stakeholder analysis
+"Use Will to create comprehensive requirements including stakeholder analysis and business impact assessment"
+
+# 2. Enterprise architecture with security-first design
+"Use Mike to design enterprise architecture with security-first principles and compliance requirements"
+
+# 3. Comprehensive security architecture
+"Use Sarah to design comprehensive security architecture with automated scanning and compliance monitoring"
+
+# 4. Full-stack implementation with documentation
+"Use Luke to implement full-stack application with automated documentation and comprehensive testing"
+
+# 5. Enterprise infrastructure with monitoring
+"Use Alex to set up enterprise infrastructure with comprehensive monitoring, alerting, and incident response"
+
+# 6. Comprehensive testing strategy
+"Use Vijay to implement comprehensive testing strategy including performance, security, and accessibility testing"
+
+# 7. Advanced code review with automation
+"Use Marcus to perform advanced code review with automated quality gates and documentation validation"
+
+# 8. Advanced debugging with monitoring integration
+"Use Diego to set up proactive debugging with monitoring integration and automated issue detection"
+
+# 9. Performance analytics and business intelligence
+"Use Elena to implement performance analytics with business impact correlation and predictive modeling"
+```
+
+### ⚡ Advanced Feature Development Workflow
+
+```bash
+# 1. Feature requirements with user research
+"Use Will to define feature requirements including user research analysis and acceptance criteria"
+
+# 2. Feature architecture with performance considerations
+"Use Mike to design feature architecture with performance optimization and scalability planning"
+
+# 3. Security review with automated scanning
+"Use Sarah to review feature security with automated vulnerability scanning and compliance validation"
+
+# 4. Implementation with automated documentation
+"Use Luke to implement feature with automated API documentation and component documentation"
+
+# 5. Comprehensive testing with automation
+"Use Vijay to create comprehensive test suite with automated testing pipeline integration"
+
+# 6. Git-enhanced code review
+"Use Marcus to perform Git-enhanced code review with change impact analysis and quality metrics"
+
+# 7. Advanced debugging with monitoring
+"Use Diego to set up feature-specific monitoring and debugging with automated alerting"
+
+# 8. Performance impact analysis
+"Use Elena to analyze feature performance impact on overall system and business metrics"
+```
+
+## 🔗 Inter-Agent Communication Protocol
+
+### 📋 Standardized Handoff Formats
+
+**Requirements → Architecture Handoff (Will → Mike)**
+```markdown
+## Requirements Summary
+**Feature**: User Authentication System
+**Priority**: High
+**User Stories**: 
+- As a user, I want to register with email/password
+- As a user, I want to log in securely with 2FA
+
+**Acceptance Criteria**:
+- Email verification required
+- Password strength validation
+- 2FA with TOTP support
+- Session management with JWT
+
+**Constraints**:
+- GDPR compliance required
+- Integration with existing user database
+- Mobile app compatibility
+
+**Next Steps**: Architecture design needed for scalable authentication system
+```
+
+**Architecture → Security Handoff (Mike → Sarah)**
+```markdown
+## Architecture Summary
+**System Design**: JWT-based authentication with Redis session store
+**Key Components**: 
+- Auth Service: Node.js with FastAPI
+- Session Store: Redis cluster
+- Database: PostgreSQL with encryption
+
+**Technology Stack**:
+- Backend: Node.js with Express, JWT, bcrypt
+- Database: PostgreSQL with row-level security
+- Cache: Redis cluster for sessions
+- Infrastructure: Kubernetes with ingress
+
+**Security Considerations**: JWT token security, password hashing, session management, GDPR compliance
+**Scalability Plan**: Horizontal scaling with Redis cluster and database read replicas
+
+**Next Steps**: Security review needed for authentication flow and data protection
+```
+
+### 🔄 Quality Gates
+
+Each agent handoff includes automated quality gates:
+1. **Requirements Completeness** - All acceptance criteria defined
+2. **Architecture Review** - Technical feasibility validated
+3. **Security Compliance** - Security requirements met
+4. **Implementation Quality** - Code quality standards met
+5. **Test Coverage** - Minimum test coverage achieved
+6. **Documentation Complete** - All documentation updated
+7. **Performance Validated** - Performance requirements met
+8. **Deployment Ready** - All deployment requirements satisfied
+
+## 🛠️ Modern Tooling Integration
+
+### 🎨 Frontend Development
+- **Next.js 14+** with App Router, Server Components, automated documentation
+- **React 18+** with Testing Library, Storybook, performance optimization
+- **Angular 17+** with Standalone Components, testing utilities, documentation
+- **Vue 3+** with Composition API, testing framework integration
+
+### 📱 Mobile Development
+- **Flutter 3.0+** with automated testing, widget documentation, performance profiling
+- **React Native** with Detox E2E testing, performance monitoring
+
+### 🗄️ Backend Development
+- **FastAPI** with automatic OpenAPI documentation, testing frameworks
+- **Node.js** with Express, comprehensive testing, performance monitoring
+- **Python** with pytest, performance profiling, documentation automation
+
+### ☁️ Cloud & Infrastructure
+- **AWS** - Complete service integration with CLI tools, monitoring, cost optimization
+- **Google Cloud** - Native service integration with SDK, monitoring, BigQuery analytics  
+- **Azure** - Full platform integration with CLI, monitoring, compliance tools
+- **Multi-Cloud** - Unified management, cost optimization, disaster recovery
+
+### 🧪 Testing & Quality
+- **Unit Testing**: Jest, Vitest, pytest, JUnit with coverage reporting
+- **E2E Testing**: Playwright, Cypress, Detox with visual testing
+- **Performance Testing**: K6, JMeter, Artillery with monitoring integration
+- **Security Testing**: OWASP ZAP, Snyk, SonarQube with pipeline integration
+
+### 📊 Monitoring & Observability
+- **APM**: New Relic, Datadog, Dynatrace with business correlation
+- **Metrics**: Prometheus, InfluxDB, CloudWatch with custom dashboards
+- **Tracing**: Jaeger, Zipkin, OpenTelemetry with service mapping
+- **Logging**: ELK Stack, Fluentd with intelligent alerting
+
+## 📁 Enhanced Project Structure
 
 ```
 ai-team-alpha/
 ├── .claude/
-│   ├── agents/                          # Agent configuration files
-│   │   ├── code-reviewer-marcus.md      # Marcus - Code review specialist
-│   │   ├── data-scientist-elena.md      # Elena - Data analysis expert
-│   │   ├── debugger-diego.md            # Diego - Debugging specialist
-│   │   ├── fullstack-luke.md            # Luke - Fullstack developer
-│   │   ├── infrastructure-alex.md       # Alex - Infrastructure engineer
-│   │   ├── product-owner-will.md        # Will - Product owner
-│   │   ├── security-architect-sarah.md  # Sarah - Security architect
-│   │   ├── senior-qa-vijay.md           # Vijay - QA engineer
-│   │   └── system-architect-mike.md     # Mike - System architect
-│   └── settings.local.json              # Local Claude Code settings
-├── .github/                             # GitHub configuration
-│   ├── ISSUE_TEMPLATE/                  # Issue templates
-│   │   ├── agent_improvement.yml        # Agent improvement requests
-│   │   ├── bug_report.yml               # Bug reports
-│   │   └── feature_request.yml          # Feature requests
-│   ├── workflows/                       # GitHub Actions workflows
-│   │   ├── ci.yml                       # Continuous integration
-│   │   └── dependabot.yml               # Dependabot workflow
-│   ├── dependabot.yml                   # Dependabot configuration
-│   └── pull_request_template.md         # PR template
-├── .gitignore                           # Git ignore rules
-├── CLAUDE.md                            # Framework documentation for Claude Code
-├── CONTRIBUTING.md                      # Contribution guidelines
-├── LICENSE                              # MIT license
-├── MARKETING.md                         # Marketing article
-├── README.md                            # Project documentation
-├── SECURITY.md                          # Security policy
-└── install-agents.sh                    # Installation script
+│   ├── agents/                              # Enhanced agent configurations
+│   │   ├── AGENT_COMMUNICATION_PROTOCOL.md  # Inter-agent communication standards
+│   │   ├── code-reviewer-marcus.md          # Git-enhanced code review
+│   │   ├── data-scientist-elena.md          # Performance analytics expert
+│   │   ├── debugger-diego.md                # Advanced debugging specialist
+│   │   ├── fullstack-luke.md                # Modern full-stack developer
+│   │   ├── infrastructure-alex.md           # Multi-cloud infrastructure expert
+│   │   ├── product-owner-will.md            # Advanced product management
+│   │   ├── security-architect-sarah.md      # Comprehensive security expert
+│   │   ├── senior-qa-vijay.md               # Modern testing frameworks expert
+│   │   └── system-architect-mike.md         # Enterprise architecture expert
+│   └── settings.local.json                  # Claude Code settings
+├── .github/                                 # GitHub configuration
+│   ├── ISSUE_TEMPLATE/                      # Issue templates
+│   ├── workflows/                           # GitHub Actions workflows
+│   └── pull_request_template.md             # PR template
+├── docs/                                    # Enhanced documentation
+│   ├── agent-capabilities/                  # Individual agent documentation
+│   ├── workflows/                           # Workflow examples
+│   └── integrations/                        # Integration guides
+├── examples/                                # Usage examples
+│   ├── enterprise-project/                  # Complete enterprise workflow
+│   ├── feature-development/                 # Feature development examples
+│   └── troubleshooting/                     # Common issues and solutions
+├── CLAUDE.md                                # Enhanced framework documentation
+├── MARKETING.md                             # Advanced features marketing
+├── README.md                                # Comprehensive project documentation
+└── install-agents.sh                        # Installation script
 ```
 
-## 🎨 Agent Customization
+## 🎨 Advanced Agent Customization
 
-Each agent can be customized by editing their respective `.md` files in `.claude/agents/`:
+Each agent includes enterprise-grade customization:
 
-- **Model**: All agents use `sonnet` by default
-- **Colors**: Each agent has a unique color for UI differentiation
-- **Tools**: Specific tool access per agent role
-- **Behavior**: Custom instructions and workflows
+### 🔧 Configuration Options
+- **Model**: Sonnet for optimal performance and cost efficiency
+- **Colors**: Consistent hex color coding for visual differentiation
+- **Tools**: Specialized tool access with modern framework support
+- **Behavior**: Advanced prompts with detailed usage examples
+- **Communication**: Standardized handoff protocols and quality gates
 
-## 🤝 Best Practices
+### 📊 Performance Optimization
+- **Token Efficiency**: Optimized prompts for cost-effective operation
+- **Response Quality**: Enhanced with specific examples and use cases
+- **Workflow Integration**: Seamless handoffs between agents
+- **Error Handling**: Comprehensive error detection and resolution
 
-### When to Use Each Agent
+## 🏆 Best Practices & Enterprise Guidelines
 
-- **Use Will** when you need clear requirements, user stories, or feature prioritization
-- **Use Mike** for architectural decisions, technology choices, or system design
-- **Use Sarah** for security reviews, compliance, or threat analysis  
-- **Use Luke** for any development work across web, mobile, or backend
-- **Use Alex** for infrastructure, deployment, or DevOps tasks
-- **Use Vijay** for testing strategies, test creation, or QA processes
-- **Use Marcus** after writing code for quality and security review
-- **Use Diego** when encountering errors, bugs, or unexpected behavior
-- **Use Elena** for data analysis, SQL queries, or database insights
+### 🎯 Agent Selection Strategy
 
-### Workflow Tips
+**Planning & Requirements**
+- **Will**: Complex requirements, stakeholder management, business analysis
+- **Mike**: Architecture decisions, technology strategy, scalability planning
 
-1. **Start with planning** - Use Will and Mike before development
-2. **Security first** - Involve Sarah early for sensitive features
-3. **Test continuously** - Use Vijay throughout development, not just at the end
-4. **Review regularly** - Use Marcus after significant code changes
-5. **Debug proactively** - Use Diego when tests fail or errors occur
+**Security & Compliance**
+- **Sarah**: Security reviews, compliance automation, vulnerability management
+- **Marcus**: Code security, review automation, quality assurance
 
-## 📄 License
+**Development & Implementation**
+- **Luke**: Full-stack development, documentation automation, modern frameworks
+- **Alex**: Infrastructure, cloud deployment, monitoring, performance optimization
+
+**Quality & Maintenance**
+- **Vijay**: Testing strategy, quality engineering, automation
+- **Diego**: Advanced debugging, monitoring integration, issue prevention
+- **Elena**: Performance analytics, business intelligence, data-driven optimization
+
+### 🔄 Workflow Optimization
+
+**Sequential Workflows**
+1. **Requirements** (Will) → **Architecture** (Mike) → **Security** (Sarah)
+2. **Implementation** (Luke) → **Review** (Marcus) → **Testing** (Vijay)
+3. **Deployment** (Alex) → **Monitoring** (Elena) → **Debugging** (Diego)
+
+**Parallel Workflows**
+- **Luke + Marcus**: Continuous development and review
+- **Alex + Elena**: Infrastructure deployment and monitoring
+- **Vijay + Diego**: Testing and issue resolution
+
+**Quality Gates**
+- Automated validation at each handoff point
+- Comprehensive documentation requirements
+- Performance and security validation
+- Business impact assessment
+
+## 🔒 Enterprise Security & Compliance
+
+### 🛡️ Security Features
+- **Comprehensive Security Scanning**: SAST, DAST, dependency scanning, container security
+- **Compliance Automation**: GDPR, SOX, HIPAA compliance monitoring and reporting
+- **Threat Modeling**: Advanced threat analysis and mitigation strategies
+- **Security Pipeline Integration**: Automated security validation in CI/CD
+
+### 📋 Compliance Support
+- **Audit Trails**: Comprehensive logging and documentation
+- **Policy Enforcement**: Automated policy validation and enforcement
+- **Risk Assessment**: Continuous risk monitoring and reporting
+- **Incident Response**: Automated incident detection and response procedures
+
+## 📈 Performance & Monitoring
+
+### 📊 Comprehensive Observability
+- **Application Performance**: APM integration with business correlation
+- **Infrastructure Monitoring**: Full-stack monitoring with predictive analytics
+- **Business Intelligence**: Performance impact on business metrics
+- **Real-time Analytics**: Live dashboards with automated alerting
+
+### 🔍 Advanced Analytics
+- **Predictive Modeling**: Capacity planning and performance optimization
+- **Anomaly Detection**: Automated issue detection and prevention
+- **Trend Analysis**: Historical data analysis with business insights
+- **Cost Optimization**: Performance per dollar optimization recommendations
+
+## 🤝 Contributing & Community
+
+### 🛠️ Development Guidelines
+- Follow established agent patterns and conventions
+- Include comprehensive examples and use cases
+- Test thoroughly across different scenarios
+- Update documentation for all changes
+
+### 🐛 Issue Reporting
+- Use provided issue templates for consistency
+- Include specific agent and workflow context
+- Provide reproduction steps and expected behavior
+- Tag issues appropriately for faster resolution
+
+### 💡 Feature Requests
+- Follow feature request template
+- Include business justification and use cases
+- Consider impact on existing workflows
+- Provide implementation suggestions
+
+## 📄 License & Legal
 
 MIT License - see LICENSE file for details
 
-## 🔗 Links
+## 🔗 Resources & Links
 
+### 📚 Documentation
 - [Claude Code Documentation](https://docs.anthropic.com/claude/docs/claude-code)
+- [Agent Configuration Guide](docs/agent-capabilities/)
+- [Workflow Examples](docs/workflows/)
+- [Integration Guides](docs/integrations/)
+
+### 🎯 Community
 - [Issue Tracker](https://github.com/your-org/ai-team-alpha/issues)
+- [Discussions](https://github.com/your-org/ai-team-alpha/discussions)
 - [Contributing Guidelines](CONTRIBUTING.md)
+- [Security Policy](SECURITY.md)
+
+### 🚀 Quick Links
+- [Installation Guide](#-quick-start)
+- [Agent Capabilities](#-meet-your-enhanced-ai-team)
+- [Advanced Features](#-advanced-features)
+- [Enterprise Workflows](#-advanced-workflow-examples)
 
 ---
 
-**Built with ❤️ for Claude Code developers**
+**🚀 Built with ❤️ for Enterprise Claude Code Development**
+
+*Transform your development workflow with AI Team Alpha's advanced specialized agents*

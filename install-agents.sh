@@ -14,7 +14,7 @@ NC='\033[0m' # No Color
 
 # Script information
 SCRIPT_NAME="AI Team Alpha Installer"
-VERSION="1.0.0"
+VERSION="2.0.0"
 AGENTS_SOURCE_DIR="./.claude/agents"
 AGENTS_TARGET_DIR="$HOME/.claude/agents"
 
@@ -24,9 +24,9 @@ FORCE_INSTALL=false
 # Banner
 echo -e "${GREEN}╔══════════════════════════════════════════════════════════════╗"
 echo -e "║                                                              ║"
-echo -e "║   🤖 AI Team Alpha Installer v1.0.0 🤖                       ║"
+echo -e "║   🤖 AI Team Alpha Installer v2.0.0 🤖                       ║"
 echo -e "║                                                              ║"
-echo -e "║   Installing 9 agents + framework docs for Claude Code       ║"
+echo -e "║   Installing 9 agents + framework docs + protocols          ║"
 echo -e "║                                                              ║"
 echo -e "╚══════════════════════════════════════════════════════════════╝${NC}"
 echo
@@ -91,7 +91,21 @@ check_source_directory() {
         exit 1
     fi
     
-    print_success "Found all 10 expected files (9 agents + framework documentation)"
+    
+    # Check for AGENT_COMMUNICATION_PROTOCOL.md in agents directory
+    if [ ! -f "$AGENTS_SOURCE_DIR/AGENT_COMMUNICATION_PROTOCOL.md" ]; then
+        missing_agents+=("AGENT_COMMUNICATION_PROTOCOL.md")
+    fi
+    
+    if [ ${#missing_agents[@]} -gt 0 ]; then
+        print_error "Missing agent configuration files:"
+        for agent in "${missing_agents[@]}"; do
+            print_error "  - $agent"
+        done
+        exit 1
+    fi
+    
+    print_success "Found all 11 expected files (9 agents + framework documentation + communication protocol)"
 }
 
 # Function to create target directory
@@ -218,8 +232,12 @@ install_agents() {
     fi
     
     echo
+    echo
     print_success "Installation completed!"
     print_success "Installed $installed_count agent configuration files"
+    print_status "✅ 9 specialized AI agents"
+    print_status "✅ Framework documentation (CLAUDE.md)"
+    print_status "✅ Inter-agent communication protocol"
 }
 
 # Function to verify installation
@@ -228,10 +246,10 @@ verify_installation() {
     
     local agent_count=$(find "$AGENTS_TARGET_DIR" -name "*.md" -type f | wc -l)
     
-    if [ "$agent_count" -eq 10 ]; then
-        print_success "Verification passed: All 10 files installed correctly (9 agents + framework documentation)"
+    if [ "$agent_count" -eq 11 ]; then
+        print_success "Verification passed: All 11 files installed correctly (9 agents + framework documentation + communication protocol)"
     else
-        print_warning "Verification warning: Found $agent_count files (expected 10: 9 agents + CLAUDE.md)"
+        print_warning "Verification warning: Found $agent_count files (expected 11: 9 agents + CLAUDE.md + AGENT_COMMUNICATION_PROTOCOL.md)"
     fi
     
     echo
@@ -270,11 +288,12 @@ show_usage_instructions() {
     echo "  \"Use the Marcus subagent to review recent changes\""
     echo
     print_status "For complete documentation, see:"
-    echo "  • README.md - Project overview and quick start"
-    echo "  • TUTORIAL.md - Comprehensive tutorial with examples"
-    echo "  • CLAUDE.md - Complete agent configuration details"
+    echo "  • README.md - Comprehensive project documentation and advanced features"
+    echo "  • CLAUDE.md - Framework documentation and agent capabilities"
+    echo "  • AGENT_COMMUNICATION_PROTOCOL.md - Inter-agent workflow patterns"
+    echo "  • MARKETING.md - Enterprise features and success stories"
     echo
-    print_success "Happy coding with your AI Team Alpha! 🚀"
+    print_success "Happy coding with your AI Team Alpha v2.0! 🚀⚡"
 }
 
 # Main installation process

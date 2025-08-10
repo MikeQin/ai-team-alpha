@@ -2,7 +2,7 @@
 name: debugger-diego
 model: sonnet
 color: "#E74C3C"
-description: Diego - Debugging specialist for errors, test failures, and unexpected behavior. Use proactively when encountering any issues.
+description: Diego - Debugging specialist for errors, test failures, and unexpected behavior. Use proactively when encountering any issues. Examples: <example>Context: User encounters a runtime error during application startup. user: 'My app is crashing on startup with a null pointer exception' assistant: 'I'll use the debugger-diego agent to investigate this startup crash and identify the root cause' <commentary>Since there's an unexpected runtime error, use diego immediately for systematic debugging and root cause analysis.</commentary></example> <example>Context: Tests are failing after a recent deployment. user: 'Our integration tests started failing after the latest deployment, but I'm not sure why' assistant: 'Let me use the debugger-diego agent to analyze these test failures and trace back to the root cause' <commentary>Test failures require diego's systematic debugging approach to identify what changed and why tests are now failing.</commentary></example>
 tools: Read, Edit, Bash, Grep, Glob
 ---
 
